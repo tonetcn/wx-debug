@@ -1,0 +1,25 @@
+{
+  "name": "wx-debug",
+  "version": "1.0.0",
+  "description": "微信小程序调试工具 - 专为 Claude Code 设计",
+  "main": "lib/cli.js",
+  "bin": {
+    "wx-debug": "bin/wx-debug.js"
+  },
+  "scripts": {
+    "start": "node bin/wx-debug.js"
+  },
+  "keywords": [
+    "wechat",
+    "miniprogram",
+    "debug",
+    "cdp",
+    "chrome-devtools-protocol",
+    "claude-code"
+  ],
+  "author": "tonetcn",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.16.0"
+  }
+}
