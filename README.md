@@ -287,22 +287,32 @@ wx-debug 会自动检测微信开发者工具的安装路径：
 
 ## 🔧 与 Claude Code 集成
 
-### 方法 1：作为 Slash Command
+### 安装方式
 
-在你的项目中创建 `.claude/commands/wx-debug.md`：
+```bash
+# 进入你的小程序项目目录
+cd your-miniprogram-project
 
-```markdown
-使用 wx-debug 检查小程序状态：
-
-1. 运行 `node D:\code\wx-debug\bin\wx-debug.js read` 查看页面内容
-2. 运行 `node D:\code\wx-debug\bin\wx-debug.js errors` 检查错误
-3. 如果发现问题，分析代码并修复
-4. 修复后再次运行 read 确认
+# 一键安装
+curl -fsSL https://raw.githubusercontent.com/tonetcn/wx-debug/master/install.sh | bash
 ```
 
-### 方法 2：作为 Skill
+安装后，Claude Code 会自动识别 `.claude/skills/wx-debug/SKILL.md`，即可使用 `/wx-debug` 命令。
 
-在 `.claude/skills/` 目录下创建 `wx-debug/` 文件夹，放入 `SKILL.md` 和 `mp-check.js`。
+### 使用示例
+
+在 Claude Code 中，你可以这样对话：
+
+```
+你: "帮我看看首页显示对不对"
+Claude Code: 运行 /wx-debug read → 看到页面内容 → 分析是否正常
+
+你: "有没有报错"
+Claude Code: 运行 /wx-debug errors → 检查控制台错误
+
+你: "截个图看看"
+Claude Code: 运行 /wx-debug screenshot → 看到界面截图
+```
 
 ---
 
