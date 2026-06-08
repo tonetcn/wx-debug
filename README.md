@@ -29,6 +29,8 @@ wx-debug 再次截屏 → 确认修复成功 ✅
 
 ## ✨ 功能特性
 
+### 基础调试
+
 | 命令 | 功能 | 使用场景 |
 |------|------|----------|
 | `read` | 读取页面文本内容 | 查看页面显示了什么 |
@@ -42,6 +44,42 @@ wx-debug 再次截屏 → 确认修复成功 ✅
 | `storage` | 查看本地存储 | 检查缓存数据 |
 | `click <选择器>` | 模拟点击 | 自动化测试 |
 | `input <选择器> <内容>` | 模拟输入 | 自动化测试 |
+
+### 性能分析（v2.0 新增）
+
+| 命令 | 功能 | 使用场景 |
+|------|------|----------|
+| `perf` | 性能指标监控 | 查看 JS 堆大小、DOM 节点数等 |
+| `memory` | 内存分析与 GC | 检测内存泄漏，触发垃圾回收 |
+| `profile [秒数]` | CPU 性能分析 | 找出耗时函数 |
+
+### 网络调试（v2.0 新增）
+
+| 命令 | 功能 | 使用场景 |
+|------|------|----------|
+| `har` | 网络请求导出 | 导出为 HAR 格式，可用 Chrome 分析 |
+
+### 设备模拟（v2.0 新增）
+
+| 命令 | 功能 | 使用场景 |
+|------|------|----------|
+| `device list` | 列出可用设备 | 查看预置设备配置 |
+| `device <名称>` | 切换设备 | 模拟不同屏幕尺寸 |
+
+### DOM 操作（v2.0 新增）
+
+| 命令 | 功能 | 使用场景 |
+|------|------|----------|
+| `tree [选择器]` | 结构化 DOM 查询 | 比 dom 更强大的查询能力 |
+| `style <选择器>` | CSS 规则查看 | 查看完整匹配规则链 |
+| `watch [选择器]` | 元素变化监听 | 调试动态渲染问题 |
+
+### 无障碍与导航（v2.0 新增）
+
+| 命令 | 功能 | 使用场景 |
+|------|------|----------|
+| `a11y` | 无障碍树分析 | 检查可访问性问题 |
+| `nav history` | 查看导航历史 | 了解页面跳转流程 |
 
 ---
 
@@ -60,7 +98,7 @@ cd your-miniprogram-project
 curl -fsSL https://raw.githubusercontent.com/tonetcn/wx-debug/master/install.sh | bash
 
 # Windows PowerShell:
-bash -c "curl -fsSL https://raw.githubusercontent.com/tonetcn/wx-debug/master/install.sh -o /tmp/wx-debug-install.sh && bash /tmp/wx-debug-install.sh && rm /tmp/wx-debug-install.sh"
+bash -c "curl -fsSL https://raw.githubusercontent.com/tonetcn/wx-debug/master/install.sh -o /tmp/debug-install.sh && bash /tmp/debug-install.sh && rm /tmp/debug-install.sh"
 ```
 
 安装完成后，在 Claude Code 中即可使用：
@@ -70,6 +108,9 @@ bash -c "curl -fsSL https://raw.githubusercontent.com/tonetcn/wx-debug/master/in
 /wx-debug screenshot    # 截屏
 /wx-debug console       # 监听控制台
 /wx-debug network       # 监听网络请求
+/wx-debug perf          # 查看性能指标
+/wx-debug memory        # 内存分析
+/wx-debug device list   # 列出设备
 ```
 
 > 💡 `install.sh` 会自动在你的项目中创建 `.claude/skills/wx-debug/` 目录，无需手动操作。
@@ -316,6 +357,21 @@ Claude Code: 运行 /wx-debug errors → 检查控制台错误
 
 你: "截个图看看"
 Claude Code: 运行 /wx-debug screenshot → 看到界面截图
+
+你: "性能怎么样"
+Claude Code: 运行 /wx-debug perf → 查看性能指标
+
+你: "有没有内存泄漏"
+Claude Code: 运行 /wx-debug memory → 内存分析与 GC
+
+你: "模拟 iPhone 14 看看"
+Claude Code: 运行 /wx-debug device iphone-14 → 切换设备
+
+你: "这个元素的 CSS 规则是什么"
+Claude Code: 运行 /wx-debug style .my-class → 查看匹配的 CSS 规则
+
+你: "帮我分析一下 CPU 性能"
+Claude Code: 运行 /wx-debug profile 10 → CPU 分析 10 秒
 ```
 
 ---

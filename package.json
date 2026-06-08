@@ -1,6 +1,6 @@
 {
   "name": "wx-debug",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "微信小程序调试工具 - 专为 Claude Code 设计",
   "main": "lib/cli.js",
   "bin": {
@@ -15,7 +15,11 @@
     "debug",
     "cdp",
     "chrome-devtools-protocol",
-    "claude-code"
+    "claude-code",
+    "performance",
+    "memory",
+    "har",
+    "device-emulation"
   ],
   "author": "tonetcn",
   "license": "MIT",
