@@ -59,8 +59,11 @@ cd your-miniprogram-project
 # macOS / Linux:
 curl -fsSL https://raw.githubusercontent.com/tonetcn/wx-debug/master/install.sh | bash
 
-# Windows PowerShell:
+# Windows PowerShell (中文会显示乱码，但功能正常):
 irm https://raw.githubusercontent.com/tonetcn/wx-debug/master/install.sh | bash
+
+# Windows PowerShell (无乱码):
+bash -c "curl -fsSL https://raw.githubusercontent.com/tonetcn/wx-debug/master/install.sh -o /tmp/wx-debug-install.sh && bash /tmp/wx-debug-install.sh && rm /tmp/wx-debug-install.sh"
 ```
 
 安装完成后，在 Claude Code 中即可使用：
