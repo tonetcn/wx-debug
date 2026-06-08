@@ -56,7 +56,11 @@ wx-debug 再次截屏 → 确认修复成功 ✅
 cd your-miniprogram-project
 
 # 2. 一行命令安装
+# macOS / Linux:
 curl -fsSL https://raw.githubusercontent.com/tonetcn/wx-debug/master/install.sh | bash
+
+# Windows PowerShell:
+irm https://raw.githubusercontent.com/tonetcn/wx-debug/master/install.sh | bash
 ```
 
 安装完成后，在 Claude Code 中即可使用：
@@ -69,11 +73,6 @@ curl -fsSL https://raw.githubusercontent.com/tonetcn/wx-debug/master/install.sh 
 ```
 
 > 💡 `install.sh` 会自动在你的项目中创建 `.claude/skills/wx-debug/` 目录，无需手动操作。
->
-> ⚠️ **Windows 用户注意**：PowerShell 中的 `curl` 是 `Invoke-WebRequest` 的别名，请使用 `curl.exe`：
-> ```powershell
-> curl.exe -fsSL https://raw.githubusercontent.com/tonetcn/wx-debug/master/install.sh | bash
-> ```
 
 ### 方式二：本地使用（开发者）
 
