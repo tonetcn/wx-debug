@@ -1,5 +1,5 @@
 #!/bin/bash
-# wx-debug 安装脚本
+# wx-debug 安装脚本 v2
 # 用法: curl -fsSL https://raw.githubusercontent.com/tonetcn/wx-debug/master/install.sh | bash
 
 set -e
