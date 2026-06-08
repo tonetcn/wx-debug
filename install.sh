@@ -1,6 +1,6 @@
 #!/bin/bash
 # wx-debug 一键安装脚本
-# 用法: curl -fsSL https://raw.githubusercontent.com/tonetcn/wx-debug/main/install.sh | bash
+# 用法: curl -fsSL https://raw.githubusercontent.com/tonetcn/wx-debug/master/install.sh | bash
 
 set -e
 
@@ -12,7 +12,7 @@ NC='\033[0m' # No Color
 
 # GitHub 仓库地址
 REPO="tonetcn/wx-debug"
-BRANCH="main"
+BRANCH="master"
 BASE_URL="https://raw.githubusercontent.com/${REPO}/${BRANCH}"
 
 # 目标目录

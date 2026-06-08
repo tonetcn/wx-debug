@@ -56,7 +56,7 @@ wx-debug 再次截屏 → 确认修复成功 ✅
 cd your-miniprogram-project
 
 # 2. 一行命令安装
-curl -fsSL https://raw.githubusercontent.com/tonetcn/wx-debug/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/tonetcn/wx-debug/master/install.sh | bash
 ```
 
 安装完成后，在 Claude Code 中即可使用：
