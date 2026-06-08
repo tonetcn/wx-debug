@@ -292,6 +292,47 @@ $ node bin/wx-debug.js eval "wx.getSystemInfoSync()"
 
 ---
 
+## 📁 项目结构
+
+```
+wx-debug/
+├── bin/
+│   └── wx-debug.js              # 入口文件
+├── lib/
+│   ├── cli.js                   # 命令解析
+│   ├── cdp.js                   # CDP 连接核心
+│   ├── config.js                # 配置管理
+│   └── commands/                # 命令模块
+│       ├── read.js              # 读取页面
+│       ├── screenshot.js        # 截屏
+│       ├── console.js           # 监听控制台
+│       ├── errors.js            # 检查错误
+│       ├── network.js           # 监听网络
+│       ├── dom.js               # DOM 结构
+│       ├── css.js               # 元素样式
+│       ├── eval.js              # 执行 JS
+│       ├── storage.js           # 本地存储
+│       ├── click.js             # 模拟点击
+│       ├── input.js             # 模拟输入
+│       ├── perf.js              # 性能指标 (v2.0)
+│       ├── memory.js            # 内存分析 (v2.0)
+│       ├── har.js               # 网络导出 (v2.0)
+│       ├── device.js            # 设备模拟 (v2.0)
+│       ├── tree.js              # DOM 查询 (v2.0)
+│       ├── profile.js           # CPU 分析 (v2.0)
+│       ├── style.js             # CSS 规则 (v2.0)
+│       ├── a11y.js              # 无障碍分析 (v2.0)
+│       ├── watch.js             # 元素监听 (v2.0)
+│       └── nav.js               # 页面导航 (v2.0)
+├── package.json
+├── README.md
+├── SKILL.md
+├── CHANGELOG.md
+└── install.sh
+```
+
+---
+
 ## ⚙️ 配置
 
 ### 环境变量
