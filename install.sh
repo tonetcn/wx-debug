@@ -26,6 +26,8 @@ curl -fsSL "${BASE_URL}/SKILL.md" -o "${TARGET_DIR}/SKILL.md"
 
 echo "   - wx-debug.js"
 curl -fsSL "${BASE_URL}/bin/wx-debug.js" -o "${TARGET_DIR}/wx-debug.js"
+# 修复路径引用：bin/wx-debug.js 用 ../lib，安装后 lib 在同级目录
+sed -i "s|path.join(__dirname, '..', 'lib', 'cli')|path.join(__dirname, 'lib', 'cli')|g" "${TARGET_DIR}/wx-debug.js"
 
 echo "   - lib/"
 mkdir -p "${TARGET_DIR}/lib"
