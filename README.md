@@ -47,7 +47,30 @@ wx-debug 再次截屏 → 确认修复成功 ✅
 
 ## 🚀 快速开始
 
-### 方式一：本地使用
+### 方式一：Claude Code Skill（推荐）
+
+一行命令安装为 Claude Code 的 slash command：
+
+```bash
+# 1. 进入你的小程序项目目录
+cd your-miniprogram-project
+
+# 2. 一行命令安装
+curl -fsSL https://raw.githubusercontent.com/tonetcn/wx-debug/main/install.sh | bash
+```
+
+安装完成后，在 Claude Code 中即可使用：
+
+```
+/wx-debug read          # 读取页面内容
+/wx-debug screenshot    # 截屏
+/wx-debug console       # 监听控制台
+/wx-debug network       # 监听网络请求
+```
+
+> 💡 `install.sh` 会自动在你的项目中创建 `.claude/skills/wx-debug/` 目录，无需手动操作。
+
+### 方式二：本地使用（开发者）
 
 ```bash
 # 1. 克隆项目
@@ -69,15 +92,6 @@ npm install
 node bin/wx-debug.js read          # 读取页面内容
 node bin/wx-debug.js screenshot    # 截屏
 node bin/wx-debug.js console       # 监听控制台
-```
-
-### 方式二：Claude Code 集成
-
-将 wx-debug 作为 Claude Code 的 skill，实现全自动调试：
-
-```bash
-# 在你的项目中创建 .claude/commands/wx-debug.md
-# 然后在 Claude Code 中输入 /wx-debug 即可调用
 ```
 
 ---
@@ -374,6 +388,17 @@ wx-debug/
 ## 📄 许可证
 
 本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+
+---
+
+## ⚠️ 免责声明
+
+本项目是一个开源工具，旨在辅助微信小程序的开发与调试。微信开发者工具及其相关知识产权归腾讯公司所有，本项目与腾讯公司无关，仅用于技术交流和学习目的。
+
+- 本项目不收集任何用户数据
+- 本项目不会修改微信开发者工具的任何文件
+- 使用本工具进行开发调试所产生的后果由用户自行承担
+- 如有任何问题或建议，请联系：[beijing2118@163.com](mailto:beijing2118@163.com)
 
 ---
 
